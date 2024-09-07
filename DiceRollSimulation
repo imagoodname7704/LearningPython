@@ -1,0 +1,14 @@
+import random
+
+roll_count = 0
+total = 0
+rollingtotal = 0
+wantednumrolls = input("How Many Times Would you like to roll? ")
+while roll_count < int(wantednumrolls):
+    first_die = random.randint(1, 6)
+    second_die = random.randint(1, 6)
+    total = first_die + second_die
+    roll_count += 1
+    rollingtotal = rollingtotal + total
+    print("You rolled a " + str(total) + "! " + "roll# " + str(roll_count))
+print("Average Total of all rolls: " + str(rollingtotal / roll_count))
