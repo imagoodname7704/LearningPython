@@ -1,0 +1,28 @@
+import random
+
+small_neeblers = 100
+generations = 0
+big_baby = 0
+tiny_baby = 0
+
+while generations < 20:
+    for neebler in range(small_neeblers):
+        chance_of_being_spotted = random.randint(0, 4)
+        if chance_of_being_spotted == 4:
+            small_neeblers = small_neeblers - 1   
+    baby_small_neeblers = 0
+    for neebler in range(small_neeblers):
+        num_babies = random.randint(0, 3)
+        big_baby = random.randint(0, 2)
+        if big_baby == 1:
+            baby_small_neeblers = baby_small_neeblers + 1
+        tiny_baby = random.randint(0, 3)
+        if tiny_baby == 1:
+            baby_small_neeblers = baby_small_neeblers - 3
+        baby_small_neeblers = baby_small_neeblers + num_babies
+    small_neeblers = baby_small_neeblers
+    generations = generations + 1
+    print(str(small_neeblers) + " small Neeblers")
+    if small_neeblers <= 0:
+        break
+print("The total number of Generations of Neeblers: " + str(generations) )
