@@ -1,0 +1,14 @@
+#Simple Example of How To Give Desired Outcome From User Input
+
+hours_played = 15
+def get_time_trophy(hours_played):
+    if hours_played >= 50:
+        trophy_name = "Valiant Veteran"
+    elif hours_played >= 10:
+        trophy_name = "Active Adventurer"
+    else:
+        trophy_name = "Trainee Traveller"
+    return trophy_name
+    print(trophy_name)
+hours = input("How Many Hours Played? ")
+print(get_time_trophy(int(hours)))
